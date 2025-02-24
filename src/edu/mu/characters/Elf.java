@@ -23,6 +23,12 @@ public class Elf extends MiddleEarthCharacter {
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		
+		// In case character is already dead
+		if (super.getHealth() <= 0) {
+			System.out.println("The attack was ineffective because the attacker is already dead.");
+			return false;
+		}
+		
 		// Determine whether the attack will be ineffective
 		String targetRace = target.getRace();
 		for (int i = 0; i < Array.getLength(cantAttack); i++) {

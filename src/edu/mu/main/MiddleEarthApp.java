@@ -12,7 +12,12 @@ public class MiddleEarthApp {
 		
 		Orc Orc1 = new Orc("Orc 1", 100, 20);
 		Elf1.attack(Orc1);
+		Elf1.attack(Orc1);
+		Elf1.attack(Orc1);
+		Elf1.attack(Orc1);
+		Elf1.attack(Orc1);
 		
+		Orc1.attack(Elf1);
 		Orc1.displayInfo();
 	}
 }
