@@ -2,9 +2,9 @@ package edu.mu.characters;
 
 import java.lang.reflect.Array;
 
-public class Elf extends MiddleEarthCharacter {
+public class Orc extends MiddleEarthCharacter {
 	
-	private String[] cantAttack = {"Elf", "Dwarf"};
+	private String[] cantAttack = {"Orc", "Elf"};
 
 	/**
 	 * Default constructor
@@ -12,7 +12,7 @@ public class Elf extends MiddleEarthCharacter {
 	 * @param health
 	 * @param power
 	 */
-	public Elf(String name, double health, double power) {
+	public Orc(String name, double health, double power) {
 		super(name, health, power);
 	}
 	
@@ -34,7 +34,7 @@ public class Elf extends MiddleEarthCharacter {
 		
 		// Determine damage to be dealt
 		double damage = super.getPower(); // Default damage is retrieved from power
-		if (targetRace == "Orc") {
+		if (targetRace == "Human") {
 			damage*=1.5; // Damage multiplier
 		}
 		
@@ -50,7 +50,7 @@ public class Elf extends MiddleEarthCharacter {
 	@Override
 	public String getRace() {
 		// TODO Auto-generated method stub
-		return "Elf";
+		return "Orc";
 	}
 	
 }

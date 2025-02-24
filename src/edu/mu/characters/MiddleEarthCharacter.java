@@ -35,6 +35,7 @@ public abstract class MiddleEarthCharacter {
 	 */
 	public abstract String getRace();
 	
+	
 	/**
 	 * Returns the power of the character
 	 * @return
@@ -72,6 +73,7 @@ public abstract class MiddleEarthCharacter {
 			return false;
 		}
 		this.health = this.health - damage;
+		System.out.println("Damage was taken");
 		return true;
 	}
 }
