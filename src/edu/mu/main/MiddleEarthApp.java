@@ -1,5 +1,6 @@
 package edu.mu.main;
 import edu.mu.characters.Elf;
+import edu.mu.cms.CharacterManager;
 import edu.mu.characters.Orc;
 
 public class MiddleEarthApp {
@@ -19,5 +20,16 @@ public class MiddleEarthApp {
 		
 		Orc1.attack(Elf1);
 		Orc1.displayInfo();
+		
+		/* Tanner Testing Code */
+		CharacterManager cm = new CharacterManager();
+		cm.addCharacter(Elf1);
+		cm.addCharacter(Orc1);
+		cm.displayAllCharacters();
+		
+		cm.deleteCharacter(Orc1);
+		cm.displayAllCharacters();
+		cm.updateCharacter(Elf1, "Elfer", 100, 20);
+		cm.displayAllCharacters();
 	}
 }

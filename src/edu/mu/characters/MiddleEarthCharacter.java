@@ -45,6 +45,14 @@ public abstract class MiddleEarthCharacter {
 	}
 	
 	/**
+	 * Sets power of the character using power parameter
+	 * @param power
+	 */
+	public void setPower(double power) {
+		this.power = power;
+	}
+	
+	/**
 	 * Returns the health of the character
 	 * @return
 	 */
@@ -53,11 +61,27 @@ public abstract class MiddleEarthCharacter {
 	}
 	
 	/**
+	 * Sets health of the character using health parameter
+	 * @param health
+	 */
+	public void setHealth(double health) {
+		this.health = health;
+	}
+	
+	/**
 	 * Returns the name of the character
 	 * @return
 	 */
 	public String getName() {
 		return this.name;
+	}
+	
+	/**
+	 * Sets name of the character using name parameter
+	 * @param name
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	/**
