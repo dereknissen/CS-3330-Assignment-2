@@ -36,5 +36,39 @@ public class CharacterManager {
 		}
 		return null;
 	}
+	
+	public boolean updateCharacter(MiddleEarthCharacter character, String name, int health, int power) {
+		if (character.name == name && character.health == health && character.power == power) {
+			return false;
+		}
+		for (int i = 0; i < characters.length; i++) {
+			if (characters[i] == character) {
+				character.name = name;
+				character.health = health;
+				character.power = power;
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean deleteCharacter(MiddleEarthCharacter character) {
+		/*boolean found = false;
+		for (int i = 0; i < characters.length; i++) {
+			if (characters[i] == character) {
+				found = true;
+			}
+			if (found == true) {
+				characters[i] == characters[i+1];
+			}
+		} */
+		return false;
+	}
+	
+	void displayAllCharacters() {
+		for (int i = 0; i < characters.length; i++) {
+			characters[i].displayInfo();
+		}
+	}
 }
 
