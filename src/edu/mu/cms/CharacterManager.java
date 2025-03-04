@@ -53,15 +53,17 @@ public class CharacterManager {
 	}
 	
 	public boolean deleteCharacter(MiddleEarthCharacter character) {
-		/*boolean found = false;
-		for (int i = 0; i < characters.length; i++) {
-			if (characters[i] == character) {
-				found = true;
+		for (int i = 0; i < size; i++) {
+			if (characters[i].equals(character)) {
+				for (int j = i; j < size-1; j++) {
+					characters[j] = characters[j+1];
+				}
+				characters[size] = null;
+				size--;
+				return true;
 			}
-			if (found == true) {
-				characters[i] == characters[i+1];
-			}
-		} */
+			
+		}
 		return false;
 	}
 	
