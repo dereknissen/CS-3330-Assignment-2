@@ -6,10 +6,17 @@ public class MiddleEarthCouncil {
 	private static MiddleEarthCouncil instance;
 	private CharacterManager characterManager;
 	
-	private MiddleEarthCouncil() {
+	/**
+	 * Default constructor
+	 */
+	public MiddleEarthCouncil() {
 		this.characterManager = new CharacterManager();
 	}
 	
+	/**
+	 * Returns the singleton instance of the MiddleEarthCouncil
+	 * @return
+	 */
 	public static MiddleEarthCouncil getInstance() {
 		if (instance == null) {
 			instance = new MiddleEarthCouncil();
@@ -17,6 +24,10 @@ public class MiddleEarthCouncil {
 		return instance;
 	}
 	
+	/**
+	 * Returns the instance of the CharacterManager
+	 * @return
+	 */
 	public CharacterManager getCharacterManager() {
 		return characterManager;
 	}

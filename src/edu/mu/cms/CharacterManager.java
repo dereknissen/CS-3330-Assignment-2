@@ -63,13 +63,11 @@ public class CharacterManager {
 		if (character.getName() == name && character.getHealth() == health && character.getPower() == power) {
 			return false;
 		}
-		for (int i = 0; i < size; i++) {
-			if (characters[i].equals(character)) {
-				character.setName(name);
-				character.setHealth(health);
-				character.setPower(power);
-				return true;
-			}
+		if (this.getCharacter(name) != null) {
+			character.setName(name);
+			character.setHealth(health);
+			character.setPower(power);
+			return true;
 		}
 		return false;
 	}

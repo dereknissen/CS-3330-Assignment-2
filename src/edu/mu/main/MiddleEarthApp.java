@@ -1,35 +1,31 @@
 package edu.mu.main;
-import edu.mu.characters.Elf;
-import edu.mu.cms.CharacterManager;
-import edu.mu.characters.Orc;
+import edu.mu.characters.*;
+import edu.mu.council.MiddleEarthCouncil;
+import edu.mu.menu.Menu;
 
 public class MiddleEarthApp {
 	public static void main(String[] args) {
-		
-		/* Derek Testing Code */
-		System.out.println("Testing");
+		/* Create an elf and orc and put them into the Character Manager */
+		MiddleEarthCouncil council = new MiddleEarthCouncil();
 		Elf Elf1 = new Elf("Elf 1", 100, 20);
-		Elf1.displayInfo();
-		
 		Orc Orc1 = new Orc("Orc 1", 100, 20);
-		Elf1.attack(Orc1);
+		council.getCharacterManager().addCharacter(Elf1);
+		council.getCharacterManager().addCharacter(Orc1);
+		council.getCharacterManager().displayAllCharacters();
+		/* Elf destroys the orc */
 		Elf1.attack(Orc1);
 		Elf1.attack(Orc1);
 		Elf1.attack(Orc1);
 		Elf1.attack(Orc1);
 		
+		/* Orc tries to attack elf but cannot and is deleted */
 		Orc1.attack(Elf1);
 		Orc1.displayInfo();
-		
-		/* Tanner Testing Code */
-		CharacterManager cm = new CharacterManager();
-		cm.addCharacter(Elf1);
-		cm.addCharacter(Orc1);
-		cm.displayAllCharacters();
-		
-		cm.deleteCharacter(Orc1);
-		cm.displayAllCharacters();
-		cm.updateCharacter(Elf1, "Elfer", 100, 20);
-		cm.displayAllCharacters();
+		council.getCharacterManager().deleteCharacter(Orc1);
+		council.getCharacterManager().displayAllCharacters();
+
+		/* Change name and power of elf */
+		council.getCharacterManager().updateCharacter(Elf1, "Elfer", 100, 50);
+		council.getCharacterManager().displayAllCharacters();
 	}
 }
