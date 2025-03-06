@@ -1,4 +1,5 @@
 package edu.mu.cms;
+
 import edu.mu.characters.MiddleEarthCharacter;
 
 public class CharacterManager {
@@ -13,6 +14,18 @@ public class CharacterManager {
 	public CharacterManager() {
 		this.characters = new MiddleEarthCharacter[5];
 		size = 0;
+	}
+	
+	public MiddleEarthCharacter[] getCharacters() {
+		return characters;
+	}
+	
+	/**
+	 * Returns size of Middle Earth chracters
+	 * @return
+	 */
+	public int getSize() {
+		return size;
 	}
 	
 	/**
@@ -60,16 +73,13 @@ public class CharacterManager {
 	 * @return
 	 */
 	public boolean updateCharacter(MiddleEarthCharacter character, String name, int health, int power) {
-		if (character.getName() == name && character.getHealth() == health && character.getPower() == power) {
+		if (character.getName().equals(name) && character.getHealth() == health && character.getPower() == power) {
 			return false;
 		}
-		if (this.getCharacter(name) != null) {
-			character.setName(name);
-			character.setHealth(health);
-			character.setPower(power);
-			return true;
-		}
-		return false;
+		character.setName(name);
+		character.setHealth(health);
+		character.setPower(power);
+		return true;
 	}
 	
 	/**
@@ -85,6 +95,7 @@ public class CharacterManager {
 				}
 				characters[size] = null;
 				size--;
+				System.out.println("Character deleted succesfully.");
 				return true;
 			}
 		}
@@ -95,9 +106,11 @@ public class CharacterManager {
 	 * Displays the name, health, and power of all characters
 	 */
 	public void displayAllCharacters() {
+		System.out.println();
 		for (int i = 0; i < size; i++) {
 			characters[i].displayInfo();
 		}
+		System.out.println();
 	}
 }
 

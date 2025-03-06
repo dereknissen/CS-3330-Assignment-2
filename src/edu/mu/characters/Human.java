@@ -55,7 +55,6 @@ public class Human extends MiddleEarthCharacter {
 	 */
 	@Override
 	public String getRace() {
-		// TODO Auto-generated method stub
 		return "Human";
 	}
 	
