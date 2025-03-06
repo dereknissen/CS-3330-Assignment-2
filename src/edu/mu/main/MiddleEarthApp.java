@@ -14,9 +14,10 @@ public class MiddleEarthApp implements Menu{
 		Menu.charAttacks();
 		Menu.charAttacks();
 		
-		/* The Orc is deleted from the council */
+		/* The Orc is deleted from the council and a Human is added */
 		Menu.viewAllChar();
 		Menu.deleteChar("Orcton");
+		Menu.addChar("Human", "Buddy", 100, 20);
 		
 		/* Change name and power of elf */
 		Menu.updateChar("Elfer", "Elflet", 100.0, 50.0);

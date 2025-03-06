@@ -1,10 +1,8 @@
 package edu.mu.characters;
 
-import java.lang.reflect.Array;
-
 public class Elf extends MiddleEarthCharacter {
 	
-	private String[] cantAttack = {"Elf", "Dwarf"};
+	private String cantAttack = "Dwarf";
 
 	/**
 	 * Default constructor
@@ -31,11 +29,12 @@ public class Elf extends MiddleEarthCharacter {
 		
 		// Determine whether the attack will be ineffective
 		String targetRace = target.getRace();
-		for (int i = 0; i < Array.getLength(cantAttack); i++) {
-			if (cantAttack[i] == targetRace) { // If the target race is in the "cantAttack" array, then the attack is ineffective
-				System.out.println("Attack was ineffective. Characters can't attack others of the same kin.");
-				return false;
-			}
+		if (targetRace.equals(this.getRace())) {
+			System.out.println("Attack was against their own kin.");
+			return false;
+		}  else if (targetRace.equals(cantAttack)) {
+			System.out.println("Attack was ineffective.");
+			return false;
 		}
 		
 		// Determine damage to be dealt
